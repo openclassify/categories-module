@@ -14,11 +14,6 @@
     }
   },
   "require": {
-    "anomaly.field_type.select": "*",
-    "anomaly.field_type.integer": "*",
-    "anomaly.field_type.text": "*",
-    "anomaly.field_type.textarea": "*",
-    "anomaly.field_type.slug": "*",
-    "anomaly.field_type.relationship": "*"
+    "anomaly/streams-platform": "^1.6"
   }
 }
