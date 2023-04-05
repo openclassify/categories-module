@@ -1,0 +1,43 @@
+<div class="modal-header">
+    <button class="close" data-dismiss="modal">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">{{ trans('module::message.choose_category') }}</h4>
+</div>
+
+<div class="modal-body">
+
+    {{ asset_style("anomaly.field_type.select::css/choices.css", ["as:jshjohnson/Choices.css"]) }}
+    {{ asset_style("anomaly.field_type.select::css/search.css") }}
+    {{ asset_script("visiosoft.module.categories::js/category-input.js") }}
+
+    <select data-provides="anomaly.field_type.select" data-search data-index="1" id="category-select-1">
+        <option value="" selected disabled>{{ trans('visiosoft.module.categories::message.choose_option') }}</option>
+        {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+        {% endfor %}
+    </select>
+
+    <select data-provides="anomaly.field_type.select" data-search data-index="2" id="category-select-2">
+        <option value="" selected disabled>{{ trans('visiosoft.module.categories::message.choose_option') }}</option>
+    </select>
+
+    <select data-provides="anomaly.field_type.select" data-search data-index="3" id="category-select-3">
+        <option value="" selected disabled>{{ trans('visiosoft.module.categories::message.choose_option') }}</option>
+    </select>
+
+    <select data-provides="anomaly.field_type.select" data-search data-index="4" id="category-select-4">
+        <option value="" selected disabled>{{ trans('visiosoft.module.categories::message.choose_option') }}</option>
+    </select>
+
+    <select data-provides="anomaly.field_type.select" data-search data-index="5" id="category-select-5">
+        <option value="" selected disabled>{{ trans('visiosoft.module.categories::message.choose_option') }}</option>
+    </select>
+
+    <div class="hidden category-select-action" style="justify-content: center; align-items: center">
+        <button type="button" class="btn btn-success action w-100" data-action="select" data-value="">
+            {{ trans('visiosoft.module.categories::button.select') }}
+        </button>
+    </div>
+
+</div>

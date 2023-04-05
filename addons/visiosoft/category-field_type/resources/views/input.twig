@@ -1,0 +1,35 @@
+<a data-toggle="modal" data-target="#category-modal" class="btn btn-success btn-xs"
+   href="{{ url('entry/handle/select-category') }}">
+    <i class="fa fa-search "></i>
+    {{ trans('visiosoft.module.categories::button.select_category') }}
+</a>
+
+<div class="modal remote" id="category-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<input type="hidden" name="category" value="{{ field_type.getValue() }}">
+<div class="selected-category {{ field_type.getValue() ? '' : 'hidden' }} mt-1">
+    <div class="panel-table">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td>
+                        {% set parent = field_type.getParent() %}
+                        {% if field_type.getValue() %}
+                            {% for category in parent|reverse %}
+                                {{ category.name }}
+                                {{ loop.index < count(parent) ? ' > ' : '' }}
+                            {% endfor %}
+                        {% endif %}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

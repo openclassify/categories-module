@@ -1,0 +1,24 @@
+{
+  "name": "visiosoft/categories-module",
+  "type": "streams-addon",
+  "authors": [
+    {
+      "name": "Vedat Akdoğan.",
+      "email": "vedat@visiosoft.com.tr"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Visiosoft\\CategoriesModule\\": "src/",
+      "Visiosoft\\CategoryFieldType\\": "addons/visiosoft/category-field_type/src/"
+    }
+  },
+  "require": {
+    "anomaly.field_type.select": "*",
+    "anomaly.field_type.integer": "*",
+    "anomaly.field_type.text": "*",
+    "anomaly.field_type.textarea": "*",
+    "anomaly.field_type.slug": "*",
+    "anomaly.field_type.relationship": "*"
+  }
+}

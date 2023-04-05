@@ -1,0 +1,22 @@
+<div class="card">
+    <nav class="navbar navbar-light bg-info text-white">
+        <p>
+            <i class="fa fa-info-circle fa-lg"></i>
+            {{ trans('visiosoft.module.categories::message.main_category_instruction',{'name':table.getOption('parent').name})|raw }}
+        </p>
+        <div class="nav navbar-nav">
+            {% set parent_categories = table.getOption('parent').getParents()|reverse %}
+            {% for category in parent_categories %}
+                {% if loop.index < count(parent_categories) %}
+                    <a href="/admin/categories/category?parent={{ category.id }}" class="text-white font-weight-bold">
+                        {{ category.name }}
+                    </a>
+                    <i class="fa fa-chevron-right small"></i>
+                {% else %}
+                    <b>{{ category.name }}</b>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </nav>
+
+</div>
